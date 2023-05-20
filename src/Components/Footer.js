@@ -1,6 +1,6 @@
 import Theme from "./Theme";
 
-export default function Footer() {
+export function Footer() {
     
     return (
         <footer class="footer items-center p-4 bg-neutral text-neutral-content sticky top-[100vh]">

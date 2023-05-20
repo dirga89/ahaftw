@@ -1,14 +1,10 @@
-export default function Login() {
-
-    const onSubmitLogIn = (event) => {
-
-    }
+export function Login() {
 
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card w-96 bg-base-100 shadow-xl text-center">
             <div className="card-body">
 
-                <h2>Log In</h2>
+                <h1 className="text-3xl font-semibold">Log In</h1>
                 <form>
                     <div className="form-control w-full max-w-xs my-4">
                         <label className="label">
