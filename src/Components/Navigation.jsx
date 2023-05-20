@@ -8,7 +8,7 @@
 *-------------------------------------------------------------------*/
 
 import React from 'react'
-import Theme from "./Theme"
+import { Theme } from './Theme'
 import { IconContext } from 'react-icons'
 import { HiUser } from "react-icons/hi"
 

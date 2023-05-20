@@ -1,4 +1,4 @@
-export function Login() {
+export const Login = () => {
 
     return (
         <div className="card w-96 bg-base-100 shadow-xl text-center">

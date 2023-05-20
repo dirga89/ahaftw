@@ -1,6 +1,7 @@
 import React from 'react';
 
-export default function Theme() {
+export const Theme = () => {
+
     const [theme, setTheme] = React.useState('garden');
     
     const toggleTheme = () => {
@@ -21,4 +22,4 @@ export default function Theme() {
             </label>
         </button>
     );
-  }
+}
