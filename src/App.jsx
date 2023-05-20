@@ -1,5 +1,5 @@
 //import './App.css';
-import { Login }  from './Pages'
+import { Login }  from './pages'
 import { Navigation } from './Components'
 
 function App() {
