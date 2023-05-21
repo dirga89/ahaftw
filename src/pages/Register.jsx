@@ -1,9 +1,8 @@
-import React from 'react'
-import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom';
-import { HiLogin } from 'react-icons/hi'
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { HiUserAdd } from 'react-icons/hi'
 
-export default function Login() {
+export default function Register() {
   const {
     register,
     handleSubmit,
@@ -20,7 +19,7 @@ export default function Login() {
   return (
     <div className='card w-96 bg-base-100 shadow-xl p-10'>
 
-        <h1 className="text-3xl font-semibold text-center mb-4">Login</h1>
+        <h1 className="text-3xl font-semibold text-center mb-4">Register</h1>
         <form onSubmit={handleSubmit(onSubmit)} className="">
 
             <div className="form-group">
@@ -60,18 +59,30 @@ export default function Login() {
                 {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password.message}</p>}
             </div>
 
+            <div className="form-group">
+                <label className="block font-medium mt-4">Repeat Password</label>
+                <input
+                {...register('repeat_password', {
+                    required: 'required',
+                    validate: (value) =>
+                    value === password || 'passwords do not match',
+                })}
+                type='password'
+                id='repeat_password'
+                placeholder='repeat password ...'
+                className="mt-1 p-1 pl-2 block w-full shadow-sm rounded-md"
+                />
+                {errors.repeat_password && <p className="text-red-500 text-xs mt-1">{errors.repeat_password.message}</p>}
+            </div>
+
             <div className='flex justify-end'>
                 <div className="mt-8">
                     <button type='submit' className="btn btn-primary px-6 btn-sm">
-                    <HiLogin className='mr-2'/> Submit
+                    <HiUserAdd className='mr-2'/> Submit
                     </button>
                 </div>
             </div>
-
-            <div className='mt-4 text-end'>
-                <p>Don't have account?</p>
-                <p>Please <Link to={'/register'} className='text-blue-600 underline'>Register</Link></p>
-            </div>
+            
         </form>
     </div>
   );

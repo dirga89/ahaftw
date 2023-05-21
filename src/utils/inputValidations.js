@@ -6,41 +6,41 @@
 |  🐸 Returns:  -
 *-------------------------------------------------------------------*/
 
-export const name_validation = {
-  name: 'name',
-  label: 'name',
-  type: 'text',
-  id: 'name',
-  placeholder: 'write your name ...',
-  validation: {
-    required: {
-      value: true,
-      message: 'required',
-    },
-    maxLength: {
-      value: 30,
-      message: '30 characters max',
-    },
-  },
-}
+// export const name_validation = {
+//   name: 'name',
+//   label: 'name',
+//   type: 'text',
+//   id: 'name',
+//   placeholder: 'write your name ...',
+//   validation: {
+//     required: {
+//       value: true,
+//       message: 'required',
+//     },
+//     maxLength: {
+//       value: 30,
+//       message: '30 characters max',
+//     },
+//   },
+// }
 
-export const desc_validation = {
-  name: 'description',
-  label: 'description',
-  multiline: true,
-  id: 'description',
-  placeholder: 'write description ...',
-  validation: {
-    required: {
-      value: true,
-      message: 'required',
-    },
-    maxLength: {
-      value: 200,
-      message: '200 characters max',
-    },
-  },
-}
+// export const desc_validation = {
+//   name: 'description',
+//   label: 'description',
+//   multiline: true,
+//   id: 'description',
+//   placeholder: 'write description ...',
+//   validation: {
+//     required: {
+//       value: true,
+//       message: 'required',
+//     },
+//     maxLength: {
+//       value: 200,
+//       message: '200 characters max',
+//     },
+//   },
+// }
 
 export const password_validation = {
   name: 'password',
@@ -60,26 +60,44 @@ export const password_validation = {
   },
 }
 
-export const num_validation = {
-  name: 'num',
-  label: 'number',
-  type: 'number',
-  id: 'num',
-  placeholder: 'write a random number',
+export const repeat_password_validation = {
+  name: 'repeat_password',
+  label: 'repeat password',
+  type: 'password',
+  id: 'repeat_password',
+  placeholder: 'repeat password',
   validation: {
     required: {
       value: true,
       message: 'required',
     },
+    value: {
+      value: (value) => value === document.getElementById('password').value,
+      message: 'password do not match',
+    },
   },
 }
+
+// export const num_validation = {
+//   name: 'num',
+//   label: 'number',
+//   type: 'number',
+//   id: 'num',
+//   placeholder: 'write a random number',
+//   validation: {
+//     required: {
+//       value: true,
+//       message: 'required',
+//     },
+//   },
+// }
 
 export const email_validation = {
   name: 'email',
   label: 'email address',
   type: 'email',
   id: 'email',
-  placeholder: 'write a random email address',
+  placeholder: 'user@mail.com',
   validation: {
     required: {
       value: true,

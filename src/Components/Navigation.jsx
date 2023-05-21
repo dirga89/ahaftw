@@ -10,12 +10,13 @@
 import React from 'react'
 import { Theme } from './Theme'
 import { IconContext } from 'react-icons'
-import { HiUser } from "react-icons/hi"
+import { HiUser } from 'react-icons/hi'
+import { Link } from 'react-router-dom'
 
 export const Navigation = () => {
   return (
     <div class="navbar bg-base-300 justify-between">
-      <p class="font-semibold text-xl">Work @ Aha</p>
+      <p class="font-semibold text-xl"><Link to={'/'}>Work @ Aha</Link></p>
       <div>
         
         <Theme />

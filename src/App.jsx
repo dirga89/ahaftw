@@ -1,8 +1,11 @@
 //import './App.css';
-import { Login }  from './pages'
+import Landing from './pages/Landing'
 import { Navigation } from './Components'
+import { Outlet, useLocation } from 'react-router-dom';
 
 function App() {
+
+  const location = useLocation();
   return (
     <div className='flex flex-col h-screen justify-between'>
       <header className=''>
@@ -10,10 +13,11 @@ function App() {
       </header>
 
       <main className='flex flex-row justify-center'>
-
-
-        <Login />
-
+          {location.pathname==='/' && <Landing />}
+          <div id='detail'>
+            <Outlet />
+          </div>
+          {/* <Login /> */}
 
       </main>
         
