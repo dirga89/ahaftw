@@ -1,16 +1,17 @@
-import React, { Children } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom"
-import Root from './routes/root'
 import ErrorPage from './error-page'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import RegisterSuccess from './pages/RegisterSuccess'
+import Dashboard from './pages/Dashboard'
 
 const router = createBrowserRouter([
   {
@@ -23,8 +24,16 @@ const router = createBrowserRouter([
         element: <Register />
       },
       {
+        path: "registration_success",
+        element: <RegisterSuccess />
+      },
+      {
         path: "login",
         element: <Login />
+      },
+      {
+        path: "dashboard",
+        element: <Dashboard />
       },
     ],
   },

@@ -16,3 +16,16 @@ code {
     monospace;
 }
 
+.spin-on-hover:hover {
+  animation: spin 1s ease-in-out;
+  transition: transform .2s;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

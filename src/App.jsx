@@ -1,7 +1,7 @@
 //import './App.css';
+import { Outlet, useLocation } from 'react-router-dom';
 import Landing from './pages/Landing'
 import { Navigation } from './Components'
-import { Outlet, useLocation } from 'react-router-dom';
 
 function App() {
 

@@ -1,6 +1,11 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form'
 import { HiUserAdd } from 'react-icons/hi'
+import axios from 'axios'
+import { Navigate } from 'react-router-dom';
+
+const baseUrl = `${process.env.REACT_APP_BASE_URL}/users`;
 
 export default function Register() {
   const {
@@ -11,12 +16,22 @@ export default function Register() {
   } = useForm();
   const password = watch('password', '');
   const email = watch('email', '');
+  const [user, setUser] = useState(null);
 
   const onSubmit = (data) => {
-    console.log(data);
+    axios
+        .post(baseUrl, data)
+        .then(function (response) {
+            console.log(response);
+            setUser(response);
+        })
+        .catch(function (error) {
+            //console.log(error);
+        });
   };
 
   return (
+   
     <div className='card w-96 bg-base-100 shadow-xl p-10'>
 
         <h1 className="text-3xl font-semibold text-center mb-4">Register</h1>
@@ -78,12 +93,13 @@ export default function Register() {
             <div className='flex justify-end'>
                 <div className="mt-8">
                     <button type='submit' className="btn btn-primary px-6 btn-sm">
-                    <HiUserAdd className='mr-2'/> Submit
+                        <HiUserAdd className='mr-2'/> Submit
                     </button>
                 </div>
             </div>
-            
         </form>
+        {user && ( <Navigate to="/registration_success" />)}
     </div>
+
   );
 }
