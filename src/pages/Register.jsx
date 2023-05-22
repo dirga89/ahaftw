@@ -5,7 +5,7 @@ import { HiUserAdd } from 'react-icons/hi'
 import axios from 'axios'
 import { Navigate } from 'react-router-dom';
 
-const baseUrl = `${process.env.REACT_APP_BASE_URL}/users`;
+const baseUrl = `${process.env.REACT_APP_BASE_URL}/user`;
 
 export default function Register() {
   const {
