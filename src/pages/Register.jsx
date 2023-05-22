@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import { React, useState } from 'react';
 import { useForm } from 'react-hook-form'
 import { HiUserAdd } from 'react-icons/hi'
 import axios from 'axios'
